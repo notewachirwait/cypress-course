@@ -5,10 +5,6 @@ describe("Interactions element", () => {
 
   it("select radio button", () => {
     cy.get("select").select("Opel").should("have.value", "opel");
-    // cy.contains("Software Development Engineer in Test").should(
-    //   "contain",
-    //   "Software Development Engineer in Test"
-    // );
   });
 
   it("select dropdown list", () => {
@@ -45,3 +41,8 @@ describe("Interactions element", () => {
 //     .select(element[i])
 //     .should("have.value", element[i].toLowerCase());
 // }
+
+// cy.contains("Software Development Engineer in Test").should(
+//   "contain",
+//   "Software Development Engineer in Test"
+// );
