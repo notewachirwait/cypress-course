@@ -26,8 +26,8 @@ describe("Interactions element", () => {
 
   it("click element with  id", () => {
     cy.get('a[id="idExample"]').click();
-    cy.get(".entry-title").should("contain", "Button success");
-    cy.get(".entry-title")
+    cy.contains("Button success").should("contain", "Button success");
+    cy.contains("Button success")
       .invoke("text")
       .then((label) => {
         expect(label).eq("Button success");
