@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("login", (username, password) => {
+  cy.get("[id=login]").click();
+  cy.get("[id=userName]").type(username);
+  cy.get("[id=password]").type(password);
+  cy.get("[id=login]").click();
+  //   cy.get("[id=userName-value]")
+  //     .invoke("text")
+  //     .then((label) => {
+  //       expect(label).eq(username);
+  //     });
+});
+
+Cypress.Commands.add("addBookToCollection", (bookName) => {
+  cy.contains(bookName).click();
+  cy.contains("Add To Your Collection").click();
+  cy.contains("Profile").click();
+});
+
+Cypress.Commands.add("deleteAllbook", () => {
+  cy.contains("Delete All Books").click();
+  cy.contains("OK").click();
+});
