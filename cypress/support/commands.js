@@ -4,11 +4,6 @@ Cypress.Commands.add("login", (username, password) => {
   cy.get("[id=userName]").type(username);
   cy.get("[id=password]").type(password);
   cy.get("[id=login]").click();
-  //   cy.get("[id=userName-value]")
-  //     .invoke("text")
-  //     .then((label) => {
-  //       expect(label).eq(username);
-  //     });
 });
 
 Cypress.Commands.add("addBookToCollection", (bookName) => {
