@@ -1,5 +1,3 @@
-// https://medium.com/@pakawatmange/scope-var-let-const-%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%87-d614c4649aa9
-
 // example : 1
 function fruitCategory() {
   var category = ["banana", "apple", "mango"];
@@ -9,8 +7,7 @@ function fruitCategory() {
   console.log(category); //["banana", "apple", "mango"]
 }
 // console.log(category); //is not defined
-//ReferenceError เพราะ category ไม่สามารถเข้าถึงได้จากภายนอก function
-fruitCategory();
+// ReferenceError เพราะ category ไม่สามารถเข้าถึงได้จากภายนอก function
 
 // example : 2
 function apple(fruit) {
@@ -24,4 +21,12 @@ function apple(fruit) {
   console.log(expect);
 }
 apple("apple");
-// console.log(fruit);   is not defined
+// // console.log(fruit);   is not defined
+
+var greeter = "apple";
+greeter = "mango  instead apple";
+console.log(greeter); // output is  mango  instead apple
+
+// for (var i = 0; i < 3; i++) {
+//   console.log(i);
+// }

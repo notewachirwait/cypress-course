@@ -17,4 +17,4 @@ if (true) {
   let a = 9;
   console.log(a); // It prints 9
 }
-console.log(a);
+console.log("a is :", a);
