@@ -2,12 +2,13 @@ describe("intercept example", () => {
   before(() => {
     cy.visit("https://demoqa.com");
   });
-  it("Get book list ", () => {
+  it("user get book list success", () => {
     cy.intercept("GET", "https://demoqa.com/BookStore/v1/Books", {
       fixture: "bookList.json",
     }).as("bookList");
 
     cy.contains("Book Store Application").click();
+
     cy.wait("@bookList").its("response.statusCode").should("eq", 200);
     //asset response from web site
     cy.get(".mr-2").should("contain", "Git Pocket Guide");
@@ -21,7 +22,7 @@ describe("intercept example", () => {
     // });
   });
 
-  it("Get book detail ", () => {
+  it("user get book detail  success", () => {
     // **/BookStore/v1/Book?**
     cy.intercept(
       "GET",
@@ -52,3 +53,20 @@ describe("intercept example", () => {
 // {
 // 	log: false,
 //   }
+
+// before(() => {
+//   // runs once before all tests
+// });
+
+// beforeEach(() => {
+//   // root-level hook
+//   // runs before every test block
+// });
+
+// afterEach(() => {
+//   // runs after each test block
+// });
+
+// after(() => {
+//   // runs once all tests are done
+// });
