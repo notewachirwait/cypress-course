@@ -33,7 +33,32 @@ describe("intercept example", () => {
     ).as("bookDetail");
 
     cy.contains("Git Pocket Guide").click();
-    cy.wait("@bookDetail").its("response.statusCode").should("eq", 200);
+    cy.wait("@bookDetail");
+    // assert request url
+    cy.get("@bookDetail")
+      .its("request.url")
+      .should("eq", "https://demoqa.com/BookStore/v1/Book?ISBN=9781449325862");
+    // assert response status
+    cy.get("@bookDetail").its("response.statusCode").should("eq", 200);
+
+    // assert response headers
+    cy.get("@bookDetail")
+      .its("response.headers.content-type")
+      .should("eq", "application/json");
+
+    // assert response body
+
+    cy.get("@bookDetail")
+      .its("response.body.author")
+      .should("eq", "Richard E. Silverman");
+    // assert request body
+    cy.get("@bookDetail").its("request.body").should("eq", "");
+
+    // assert request header
+    cy.get("@bookDetail")
+      .its("request.headers.host")
+      .should("eq", "demoqa.com");
+
     // asset response from web site
     cy.get('label[id="userName-value"]').should(
       "contain",
@@ -41,6 +66,7 @@ describe("intercept example", () => {
     );
 
     // cy.wait("@bookDetail").then((interception) => {
+
     //   //asset response from json
     //   cy.get('label[id="userName-value"]').should(
     //     "contain",
@@ -49,7 +75,3 @@ describe("intercept example", () => {
     // });
   });
 });
-
-// {
-// 	log: false,
-//   }
