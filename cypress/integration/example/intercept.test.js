@@ -13,13 +13,13 @@ describe("intercept example", () => {
     //asset response from web site
     cy.get(".mr-2").should("contain", "Git Pocket Guide");
 
-    // cy.wait("@bookList").then((interception) => {
-    //   //asset response from json
-    //   cy.get(".mr-2").should(
-    //     "contain",
-    //     interception.response.body.books[0].title
-    //   );
-    // });
+    cy.get("@bookList").then((interception) => {
+      //asset response from json
+      cy.get(".mr-2").should(
+        "contain",
+        interception.response.body.books[0].title
+      );
+    });
   });
 
   it("user get book detail  success", () => {
@@ -65,13 +65,12 @@ describe("intercept example", () => {
       "Git Pocket Guide TEST"
     );
 
-    // cy.wait("@bookDetail").then((interception) => {
-
-    //   //asset response from json
-    //   cy.get('label[id="userName-value"]').should(
-    //     "contain",
-    //     interception.response.body.title
-    //   );
-    // });
+    cy.get("@bookDetail").then((interception) => {
+      //asset response from json
+      cy.get('label[id="userName-value"]').should(
+        "contain",
+        interception.response.body.title
+      );
+    });
   });
 });

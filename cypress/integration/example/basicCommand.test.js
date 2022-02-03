@@ -17,10 +17,10 @@ describe("Basic command", () => {
   });
   it("user add book to collection success", () => {
     cy.addBookToCollection("Speaking JavaScript");
-    // cy.get('a[href="/profile?book=9781449365035"]').should(
-    //   "contain",
-    //   "Speaking JavaScript"
-    // );
+    cy.get('a[href="/profile?book=9781449365035"]').should(
+      "contain",
+      "Speaking JavaScript"
+    );
     cy.get('[id="see-book-Speaking JavaScript"]')
       .invoke("text")
       .then((label) => {
