@@ -26,7 +26,3 @@ apple("apple");
 var greeter = "apple";
 greeter = "mango  instead apple";
 console.log(greeter); // output is  mango  instead apple
-
-// for (var i = 0; i < 3; i++) {
-//   console.log(i);
-// }

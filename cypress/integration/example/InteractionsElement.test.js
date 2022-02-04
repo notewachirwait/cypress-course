@@ -34,15 +34,3 @@ describe("Interactions element", () => {
       });
   });
 });
-
-//     const element = ["Volvo", "Saab", "Opel"];
-// for (let i = 0; i < element.length; i++) {
-//   cy.get("select")
-//     .select(element[i])
-//     .should("have.value", element[i].toLowerCase());
-// }
-
-// cy.contains("Software Development Engineer in Test").should(
-//   "contain",
-//   "Software Development Engineer in Test"
-// );

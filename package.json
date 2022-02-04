@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress-open": "cypress open",
-    "cypress-headless": "cypress run"
+    "cypress-headless": "cypress run",
+    "cypress-specific-file": "cypress run --spec 'cypress/integration/example/uploadFile.test.js'"
   },
   "repository": {
     "type": "git",
