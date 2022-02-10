@@ -18,7 +18,7 @@ describe("search and assert", () => {
     });
   });
 
-  describe.only("search firster web site", () => {
+  describe("search firster web site", () => {
     before(() => {
       cy.visit("https://beauty.firster.com/");
     });
