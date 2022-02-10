@@ -18,24 +18,23 @@ describe("search and assert", () => {
     });
   });
 
-  describe.skip("search advice web site", () => {
+  describe.only("search firster web site", () => {
     before(() => {
-      cy.visit("https://www.advice.co.th/");
+      cy.visit("https://beauty.firster.com/");
     });
-    it("user search samsung", () => {
-      cy.get(".search-txtbox").type("samsung");
-      cy.get('[id="btn-search-new"]').click();
-      cy.get(".product-titleh").should(
-        "contain",
-        `ผลลัพธ์การค้นหา สำหรับ "samsung"`
-      );
+    it("user search perfume", () => {
+      cy.get(".ant-input").type("perfume");
+      cy.get(".ant-input-prefix").click();
+      cy.get(
+        '[data-id="search-result-product-card-info-group-box-P100003803"]'
+      ).should("contain", "COACH Dream Perfume EDP");
     });
     it("user search not found", () => {
-      cy.get('[type="search"]').eq(2).clear().type("not found ");
-      cy.get('[data-icon="search"]').eq(0).click();
-      cy.get(".product-list-not-found .title").should(
-        "contain",
-        "ไม่พบข้อมูลที่คุณกำลังค้นหา"
+      cy.get(".ant-input").eq(0).type("test123213");
+      cy.get(".ant-input-prefix").eq(0).click();
+      cy.contains("เราไม่พบผลลัพธ์ใด ๆ สำหรับ").should(
+        "contain.text",
+        "เราไม่พบผลลัพธ์ใด ๆ สำหรับ"
       );
     });
   });

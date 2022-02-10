@@ -6,6 +6,7 @@
   "defaultCommandTimeout": 25000,
   "requestTimeout": 25000,
   "responseTimeout": 25000,
+  "includeShadowDom": true,
   "chromeWebSecurity": false,
 
   "retries": {
