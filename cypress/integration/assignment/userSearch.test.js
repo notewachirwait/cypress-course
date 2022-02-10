@@ -1,5 +1,5 @@
 describe("search and assert", () => {
-  describe("search bnn web site", () => {
+  describe("Customer is able to search in BNN website", () => {
     before(() => {
       cy.visit("https://www.bnn.in.th/th");
     });
