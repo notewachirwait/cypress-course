@@ -71,7 +71,7 @@ describe("search and assert", () => {
     });
   });
 
-  describe.only("search kingpower site", () => {
+  describe("search kingpower site", () => {
     before(() => {
       cy.visit("https://www.kingpower.com/?lang=en");
     });
