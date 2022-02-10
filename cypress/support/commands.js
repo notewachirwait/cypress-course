@@ -1,3 +1,5 @@
+// type definitions for Cypress object "cy"
+/// <reference types="cypress" />
 // -- This is a parent command --
 Cypress.Commands.add("login", (username, password) => {
   cy.get("[id=login]").click();
