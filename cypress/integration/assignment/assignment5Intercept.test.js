@@ -11,7 +11,7 @@ describe("Intercept", () => {
 
       //asset response from json
       cy.contains("TV").should(
-        "contain",
+        "contain.text",
         interception.response.body.rooms[0].features[0]
       );
     });
@@ -30,7 +30,7 @@ describe("Intercept", () => {
 
       //asset response from json
       cy.contains("test1").should(
-        "contain",
+        "contain.text",
         interception.response.body.rooms[0].features[3]
       );
     });

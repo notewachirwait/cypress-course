@@ -18,3 +18,12 @@ Cypress.Commands.add("deleteAllbook", () => {
   cy.contains("Delete All Books").click();
   cy.contains("OK").click();
 });
+
+Cypress.Commands.add("userSubmitForm", (userData) => {
+  cy.get('[id="name"]').type(userData.name);
+  cy.get('[id="email"]').type(userData.email);
+  cy.get('[id="phone"]').type("01232342424");
+  cy.get('[id="subject"]').type("note@hotmail.com");
+  cy.get('[id="description"]').type("testsubmitfom:::::note@hotmail.com");
+  cy.get('[id="submitContact"]').click();
+});
